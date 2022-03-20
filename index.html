@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Воркшоп по адаптивной вёрстке</title>
+    <style>
+        .page {
+            margin: 0;
+            font-family: Inter, sans-serif;
+        }
+        .poster {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            height: 62.5vw;
+            max-height: 100vh;
+            color: #fff;
+            padding: 20px 15px;
+            box-sizing: border-box;
+            font-size: 12px;
+            line-height: 14px;
+        }
+        .poster__image {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+        }
+        .poster::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .poster__content {
+            position: relative;
+            z-index: 3;
+        }
+        .poster__description p {
+            margin: 0;
+        }
+        .poster__title {
+            margin: 0;
+            margin-bottom: 18px;
+            font-weight: 900;
+            font-size: 32px;
+            line-height: 35px;
+        }
+        .desktop-visible {
+            display: none;
+        }
+    </style>
+    <!-- mobile media -->
+    <link rel="stylesheet" href="mobile.blocks/poster/poster.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="mobile.blocks/poster/__title/poster__title.css" media="(min-width: 768px)">
+
+    <link rel="stylesheet" href="tablet.blocks/poster/poster.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="tablet.blocks/poster/__title/poster__title.css" media="(min-width: 1024px)">
+
+    <link rel="stylesheet" href="desktop.blocks/desktop-visible/desktop-visible.css" media="(min-width: 1280px)">
+    <link rel="stylesheet" href="desktop.blocks/poster/poster.css" media="(min-width: 1280px)">
+    <link rel="stylesheet" href="desktop.blocks/poster/__title/poster__title.css" media="(min-width: 1280px)">
+    <link rel="stylesheet" href="desktop.blocks/poster/__description/poster__description.css" media="(min-width: 1280px)">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+</head>
+<body class="page">
+    <section class="poster">
+        <picture class="poster__picture">
+            <source srcset="./images/poster__background_1280.png" media="(min-width: 1280px)">
+            <source srcset="./images/poster__background_1024.png" media="(min-width: 1024px)">
+            <source srcset="./images/poster__background_768.png" media="(min-width: 768px)">
+            <img class="poster__image" src="./images/poster__background_320.png" alt="">
+        </picture>
+        <div class="poster__content">
+            <h2 class="poster__title">
+                Henri <br> Cartier&#8209;Bresson
+            </h2>
+            <div class="poster__description">
+                <p>
+                    Boston Commons, 1947 <br> 
+                    Silver gelatin print <br>
+                    Image: 11 7/8 x 17 1/16 inches <br>
+                    Paper: 15 13/16 x 19 3/4 inches <br>
+                    Signed in ink with embossed artist stamp recto
+                </p>
+                <div class="desktop-visible">
+                    <p>
+                        Boston Commons, 1947 <br> 
+                        Silver gelatin print <br>
+                        Image: 11 7/8 x 17 1/16 inches <br>
+                        Paper: 15 13/16 x 19 3/4 inches <br>
+                        Signed in ink with embossed artist stamp recto
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
